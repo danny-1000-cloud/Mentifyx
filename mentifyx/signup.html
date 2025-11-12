@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentifyx</title>
+    <link rel="icon" href="assets/IMG-20251110-WA0001.jpg" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container page-two">
+        <img src="assets/IMG-20251110-WA0001.jpg" alt="Sign Up Visual" class="main-image small-image">
+
+        <h2 class="animate-fade-up">Where mentorship meets purpose</h2>
+        
+        <form class="signup-form" action="https://formspree.io/f/xwpapkkr"
+        method="POST">
+            <div class="form-group-row">
+                <input type="text" id="first-name" name="first_name" placeholder="First Name *" required>
+                <input type="text" id="middle-name" name="middle_name" placeholder="Middle Name (Optional)">
+            </div>
+            <input type="text" id="last-name" name="last_name" placeholder="Last Name *" required>
+
+            <input type="email" id="email" name="email" placeholder="Email *" required>
+            <input type="tel" id="phone" name="phone_number" placeholder="Phone Number *" required>
+
+            <input type="text" id="country" name="country" placeholder="Country *" required>
+
+            <div class="form-group-row">
+                <select id="experience" name="user_experience" required>
+                    <option value="" disabled selected>User Experience *</option>
+                    <option value="mentor">Mentor</option>
+                    <option value="mentee">Mentee</option>
+                </select>
+                <select id="interest" name="interest" required>
+                    <option value="" disabled selected>Interest *</option>
+                    <option value="forex">Forex</option>
+                    <option value="crypto">Crypto</option>
+                </select>
+            </div>
+
+            <button type="submit" class="cta-button submit-button">Complete Waitlist Sign Up</button>
+        </form>
+
+        <div class="social-links form-social">
+            <a href="https://x.com/mentifyx?s=21" target="_blank" aria-label="Twitter (X)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.tiktok.com/@mentifyx?_r=1&_t=ZS-91HqJfCKnVB" target="_blank" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/mentifyx?igsh=MXQ5ZWd1cWtyYzdreQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</body>
+</html>

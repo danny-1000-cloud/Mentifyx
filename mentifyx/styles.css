@@ -1,0 +1,235 @@
+/* GLOBAL STYLES & RESET */
+body {
+    font-family: 'Arial', sans-serif; /* Use a modern, clean font */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9; /* Light, advanced background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center; /* Center all elements */
+}
+
+/* IMAGE STYLING */
+.main-image {
+    width: 35%;
+    max-width: 500px; /* Constrain image size */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+
+    /* --- ANIMATION ADDED HERE --- */
+    opacity: 0; 
+    /* **SMOOTH TRANSITION ADDED HERE** */
+    animation: fadeIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation-delay: 0.30s;
+}
+
+/* PAGE ONE: INTRODUCTION STYLES */
+.page-one h3 {
+    font-size: 1.4rem;
+    color: #013579; /* Bright brand color */
+    letter-spacing: 3px; /* Advanced feel */
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.description-text {
+    max-width: 600px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1em;
+    color: #555;
+    opacity: 0; 
+    /* **SMOOTH TRANSITION ADDED HERE** */
+    animation: slideInLeft 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards; 
+    animation-delay: 0.20s;
+}
+
+.animate-fade-up {
+    animation: slideInLeft 0.8s ease-out forwards;
+    animation-delay: 0.20s;
+}
+
+/* Keyframe for content sliding in from the left */
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Animation Class Definition */
+.animate-fade-up {
+    /* **SMOOTH TRANSITION ADDED HERE** */
+    animation: slideInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Customizing the default view transition */
+::view-transition-old(root) {
+  /* Fades out the old content while it leaves */
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;
+}
+
+::view-transition-new(root) {
+  /* Fades in the new content while it enters */
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in;
+}
+
+/* Define the simple keyframes for cross-fading */
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* CTA BUTTON STYLING */
+.cta-button {
+    display: inline-block;
+    background-color: #013579;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #0c60d3;
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+/* SOCIAL MEDIA LINKS STYLING */
+.social-links {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    color: #555;
+    font-size: 1.8em;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #1a73e8;
+}
+
+/* PAGE TWO: FORM STYLING */
+.page-two h2 {
+    color: #013579;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.signup-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: left; /* Align form fields left */
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Input and Select Field Styling */
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="tel"],
+.signup-form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+    border-color: #1a73e8;
+    outline: none;
+}
+
+/* Row Grouping for Names and Preferences */
+.form-group-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0; /* Handled by input margin */
+}
+
+.form-group-row input,
+.form-group-row select {
+    flex: 1; /* Makes them share space equally */
+    margin-bottom: 15px;
+}
+
+/* Specific styling for the submit button on page 2 */
+.submit-button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin: 80px 10px;
+        padding: 10px;
+    }
+
+    .main-image {
+    width: 50%;
+    max-width: 500px; /* Constrain image size */
+    margin-top: 1em;
+    }
+
+    .page-one p{
+        font-size: 1.2rem;
+    }
+    
+    .page-one h3 {
+        font-size: 1.2em;
+    }
+
+    .page-two h2{
+        font-size: 1.3rem;
+    }
+
+    .form-group-row {
+        flex-direction: column; /* Stacks inputs vertically on small screens */
+        gap: 0;
+    }
+
+    .form-group-row input,
+    .form-group-row select {
+        margin-bottom: 15px;
+    }
+}
